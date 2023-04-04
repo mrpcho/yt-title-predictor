@@ -49,7 +49,7 @@ def predict():
 
   sample_input_id, sample_attention_mask = bert_encode([sample_title], 30)
   predict_sample = loaded_model.predict([sample_input_id, sample_attention_mask])
-  score = str(predict_sample[0][0])
+  score = str(int(predict_sample[0][0]*100))
 
   data["score"] = score
   return jsonify(data)
