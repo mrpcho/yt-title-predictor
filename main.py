@@ -36,7 +36,11 @@ app = Flask(__name__)
 cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
-@app.route('/', methods = ["GET", "POST"])
+@app.route('/')
+def index():
+   return "This is youtube-title-predictor api"
+
+@app.route('/predict', methods = ["GET", "POST"])
 def predict():
   data = {"requested": "request"}
 
